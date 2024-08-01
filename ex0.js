@@ -1,12 +1,12 @@
 /**
  * Ejercicio: Usa el contructor new Date adecuadamente para crear un objeto de tipo Date que se inicialice con tu fecha de nacimiento https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
  */
-const fechaNacimiento = new Date(); // <--- SOLAMENTE DEBES MODIFICAR ESTA LÍNEA
+const fechaNacimiento = new Date('1993-10-03'); // <--- SOLAMENTE DEBES MODIFICAR ESTA LÍNEA
 
 // NO MODIFICAR A PARTIR DE AQUÍ
 const fechaActual = new Date();
 
-const edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
 const m = fechaActual.getMonth() - fechaNacimiento.getMonth();
 if (m < 0 || (m === 0 && fechaActual.getDate() < fechaNacimiento.getDate())) {
     edad--;
