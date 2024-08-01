@@ -10,23 +10,34 @@ class DNI {
      */
     constructor(titular, numero, caducidad) {
         this.titular = titular;
-        this.numero = numero;
+        this.numero = /^0-9A-Z$/;
         this.caducidad = caducidad;
     }
 
     // Nos devuelve 'true' o 'false' indicando si el DNI está caducado o no
     estaCaducado() {
-
+        if (this.caducidad < new Date()){
+            return true;
+        }
     }
 
     // Debe devolver 'true' si el DNI está bien formado, o 'false' en caso contrario
     esDniFormatoValido() {
-
+        if (!this.numero){
+            return false;
+        }
     }
 
     // Dado un número de DNI, nos calcula la letra. Buscar por Internet como calcular la letra de un DNI
     calculaLetraDni(dni) {
-
+        // Calcula el resto de dividir el número de DNI entre 23
+        const resto = this.numero % 23;
+  
+        // Utiliza la tabla para obtener la letra correspondiente
+        const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+        const letra = letras[resto];
+ 
+        return letra;
 
     }
 }
