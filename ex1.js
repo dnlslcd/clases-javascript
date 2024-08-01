@@ -7,8 +7,8 @@ class Product {
   }
 
   toString() {
-    // 'The price of the café Bona is 5 €'
-    return this.price; // INCOMPLETO
+    // 'The price of ${this.name} is ${this.price}€'
+    return `The price of ${this.name} is ${this.price}€`; // INCOMPLETO
   }
 }
 
