@@ -8,7 +8,7 @@ class Product {
 
   toString() {
     // 'The price of ${this.name} is ${this.price}€'
-    return `The price of ${this.name} is ${this.price}€`; // INCOMPLETO
+    return `The price of ${this.name} is ${this.price}€`;
   }
 }
 
