@@ -25,9 +25,7 @@ class Coche {
 
 // Método estaDepositoVacio?
 estaDepositoVacio() {
-  if (this.deposito <= 0) {
-    return true;
-  }
+  return this.deposito <= 0;
 }
 
 }
@@ -53,4 +51,4 @@ console.log("Coche Astra después de llenar el depósito:", astra);
 ibiza.deposito = 0;
 // ibiza.estaDepositoVacio();
 console.log("El deposito del Ibiza debería estar vacío", ibiza);
-console.log("Se acabó la gasolina?", ibiza.estaDepositoVacio);
+console.log("Se acabó la gasolina?", ibiza.estaDepositoVacio());
