@@ -11,21 +11,17 @@ class DNI {
     constructor(titular, numero, caducidad) {
         this.titular = titular;
         this.numero = /^0-9A-Z$/;
-        this.caducidad = caducidad;
+        this.caducidad = new Date(caducidad);
     }
 
     // Nos devuelve 'true' o 'false' indicando si el DNI está caducado o no
     estaCaducado() {
-        if (this.caducidad < new Date()){
-            return true;
-        }
+        return this.caducidad < new Date();
     }
 
     // Debe devolver 'true' si el DNI está bien formado, o 'false' en caso contrario
     esDniFormatoValido() {
-        if (!this.numero){
-            return false;
-        }
+        return !!this.numero;
     }
 
     // Dado un número de DNI, nos calcula la letra. Buscar por Internet como calcular la letra de un DNI
